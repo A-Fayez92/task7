@@ -19,12 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('gender')->nullable();
             $table->integer('age');
-            $table->string('country');
-            $table->integer('posts');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->foreignId('country_id');
         });
     }
 

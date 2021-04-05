@@ -24,9 +24,8 @@ class UserFactory extends Factory
     {
         
         $gender = $this->faker->randomElement(['male', 'female']);
-        $country = $this->faker->randomElement(['Egypt', 'KSA' , 'UAE' , 'Jordan']);
         $age = rand(15, 55);
-        $posts = rand(1,20);
+       
         return [
             'name' => $this->faker->name($gender),
             'email' => $this->faker->unique()->safeEmail,
@@ -35,8 +34,8 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'gender' => $gender,
             'age' => $age ,
-            'country' => $country,
-            'posts' => $posts,
+            'country_id' => rand(1,4),
+            
 
         ];
     }
